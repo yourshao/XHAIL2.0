@@ -1,4 +1,5 @@
 from src.core.Buildable import Buildable
+from src.core.LinkedHashSet import LinkedHashSet
 from src.core.terms.Atom import Atom
 from src.core.parser.Parser import Parser
 from src.core.terms.Literal import Literal
@@ -150,7 +151,7 @@ class Hypothesis:
                 literal_id = int(atom.get_term(1).get_value())
                 if literal_id == 0 and 0 <= clause_id < len(generalisation):
                     builders[clause_id] = Clause.Builder().set_head(generalisation[clause_id].get_head())
-                    types[clause_id] = set()
+                    types[clause_id] = LinkedHashSet()
 
             for atom in self.literals:
                 clause_id = int(atom.get_term(0).get_value())

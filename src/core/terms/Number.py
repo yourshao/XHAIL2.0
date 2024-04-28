@@ -67,6 +67,9 @@ class Number(Term):
     def __str__(self):
         return f"{self.value}"
 
-
+    def compare_to(self, other):
+        if other is None:
+            return 1
+        return self.value - other.value
 
 

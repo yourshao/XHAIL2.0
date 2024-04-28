@@ -1,6 +1,6 @@
 
 from src.core.Buildable import Buildable
-
+from src.core.LinkedHashSet import LinkedHashSet
 
 class Clause:
 
@@ -10,7 +10,7 @@ class Clause:
         head = None
 
         def __init__(self):
-            self.body = set()
+            self.body = LinkedHashSet()
             self.head = None
 
         def add_literal(self, literal):

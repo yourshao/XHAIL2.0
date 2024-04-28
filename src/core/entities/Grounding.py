@@ -246,8 +246,8 @@ class Grounding(Solvable):
             self.kernel = []
             sets =  LinkedHashSet()
             for alpha in self.delta:
-                for modeH in self.problem.modeHs:
-                    scheme = modeH.scheme
+                for modeH in self.problem.get_modeHs():
+                    scheme = modeH.get_scheme()
                     if SchemeTerm.subsumes(scheme, alpha, self.facts):
                         # head = Atom(alpha.identifier, alpha.terms, modeH.weight, modeH.priority)
                         builder = Clause.Builder().set_head(
@@ -263,15 +263,15 @@ class Grounding(Solvable):
                             level = 0
                             while usables:
                                 level += 1
-                                for modeB in self.problem.modeBs:
+                                for modeB in self.problem.get_modeBs():
                                     scheme = modeB.get_scheme()
-                                    if modeB.is_negated:
+                                    if modeB.is_negated():
                                         found = SchemeTerm.generate_and_output_4(scheme, usables, self.table, self.facts)
                                         for atom, terms in found.items():
                                             builder.add_literal(Literal.Builder(Atom.Builder(atom).set_weight(modeB.get_weight()).set_priority(modeB.get_priority()).build()).set_negated(modeB.is_negated).set_level(level).build())
                                             next_usables.update(terms)
                                     else:
-                                        matches = SchemeTerm.match_and_output(scheme, self.problem.table.get(scheme), usables)
+                                        matches = SchemeTerm.match_and_output(scheme, self.table.get(scheme), usables)
                                         for atom in matches[0]:
                                             builder.add_literal(Literal.Builder(Atom.Builder(atom).set_weight(modeB.get_weight()).set_priority(modeB.get_priority()).build()).set_negated(modeB.is_negated).set_level(level).build())
                                         next_usables.update(matches[1])

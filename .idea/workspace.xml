@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4143fbf4-bdc2-4a6d-8a13-39fb72de8c88" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/XHAIL2.0.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/XHAIL2.0.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webResources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webResources.xml" afterDir="false" />
+    <list default="true" id="4143fbf4-bdc2-4a6d-8a13-39fb72de8c88" name="Changes" comment="change project to version running without Hypothesis">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Dialler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Dialler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/entities/Grounding.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/Grounding.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/entities/Hypothesis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/Hypothesis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/entities/Values.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/Values.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/parser/Acquirer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/parser/Acquirer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/parser/Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/parser/Parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/terms/Atom.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/terms/Atom.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/entities/Problem.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/entities/Problem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/statements/Example.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/statements/Example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/terms/Clause.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/terms/Clause.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/terms/Number.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/terms/Number.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,26 +39,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Application.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.XHAIL2.0.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.main (2).executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/jekwen/Documents/作业/大三下/project/XHAIL2.0/src&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Application.executor": "Run",
+    "Python.XHAIL2.0.executor": "Run",
+    "Python.main (1).executor": "Run",
+    "Python.main (2).executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/jekwen/Documents/作业/大三下/project/XHAIL2.0/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -159,11 +156,49 @@
       <workItem from="1714268429304" duration="3163000" />
       <workItem from="1714271597331" duration="958000" />
       <workItem from="1714272557835" duration="6000" />
+      <workItem from="1714272564846" duration="2593000" />
+      <workItem from="1714309758641" duration="5399000" />
     </task>
+    <task id="LOCAL-00001" summary="change project to version running without Hypothesis">
+      <option name="closed" value="true" />
+      <created>1714275155746</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714275155746</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="change project to version running without Hypothesis" />
+    <option name="LAST_COMMIT_MESSAGE" value="change project to version running without Hypothesis" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -200,7 +235,7 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/core/entities/Grounding.py</url>
-          <line>601</line>
+          <line>604</line>
           <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
@@ -220,7 +255,7 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/core/entities/Problem.py</url>
-          <line>345</line>
+          <line>355</line>
           <option name="timeStamp" value="194" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
@@ -240,7 +275,7 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/core/entities/Problem.py</url>
-          <line>415</line>
+          <line>425</line>
           <option name="timeStamp" value="267" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
@@ -255,7 +290,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/core/entities/Grounding.py</url>
-          <line>446</line>
+          <line>449</line>
           <option name="timeStamp" value="327" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -270,17 +305,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/core/entities/Hypothesis.py</url>
-          <line>143</line>
+          <line>144</line>
           <option name="timeStamp" value="387" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/core/entities/Grounding.py</url>
-          <line>152</line>
+          <line>155</line>
           <option name="timeStamp" value="410" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/core/entities/Grounding.py</url>
-          <line>349</line>
+          <line>352</line>
           <option name="timeStamp" value="419" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -290,7 +325,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/core/entities/Hypothesis.py</url>
-          <line>222</line>
+          <line>223</line>
           <option name="timeStamp" value="423" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -310,7 +345,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/core/entities/Problem.py</url>
-          <line>200</line>
+          <line>210</line>
           <option name="timeStamp" value="428" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -330,7 +365,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/core/Logger.py</url>
-          <line>78</line>
+          <line>79</line>
           <option name="timeStamp" value="436" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -340,7 +375,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/core/entities/Hypothesis.py</url>
-          <line>20</line>
+          <line>21</line>
           <option name="timeStamp" value="455" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -349,43 +384,28 @@
           <option name="timeStamp" value="456" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/core/entities/Grounding.py</url>
-          <line>345</line>
-          <option name="timeStamp" value="457" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/core/entities/Grounding.py</url>
-          <line>340</line>
-          <option name="timeStamp" value="459" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/core/entities/Values.py</url>
           <line>16</line>
           <option name="timeStamp" value="462" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/core/entities/Grounding.py</url>
-          <line>344</line>
-          <option name="timeStamp" value="463" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/core/Logger.py</url>
-          <line>98</line>
+          <line>99</line>
           <option name="timeStamp" value="469" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/core/entities/Hypothesis.py</url>
-          <line>64</line>
+          <line>65</line>
           <option name="timeStamp" value="470" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/core/entities/Problem.py</url>
-          <line>178</line>
+          <line>188</line>
           <option name="timeStamp" value="472" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/core/entities/Problem.py</url>
-          <line>184</line>
+          <line>194</line>
           <option name="timeStamp" value="473" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -405,28 +425,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/core/parser/Parser.py</url>
-          <line>75</line>
-          <option name="timeStamp" value="478" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/core/parser/Parser.py</url>
           <line>88</line>
           <option name="timeStamp" value="479" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/core/parser/Parser.py</url>
+          <url>file://$PROJECT_DIR$/src/core/terms/Clause.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="487" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/core/Dialler.py</url>
           <line>100</line>
-          <option name="timeStamp" value="480" />
+          <option name="timeStamp" value="493" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/core/parser/Parser.py</url>
-          <line>116</line>
-          <option name="timeStamp" value="482" />
+          <url>file://$USER_HOME$/Desktop/XHAIL2.0/src/core/entities/Grounding.py</url>
+          <line>162</line>
+          <option name="timeStamp" value="494" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/core/parser/Parser.py</url>
-          <line>114</line>
-          <option name="timeStamp" value="483" />
+          <url>file://$PROJECT_DIR$/src/core/entities/Grounding.py</url>
+          <line>165</line>
+          <option name="timeStamp" value="495" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -439,16 +459,16 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="self.modeHs[0].scheme.terms" language="Python" />
+        <watch expression="self.current" language="Python" />
       </configuration>
       <inline-watch fileUrl="file://$PROJECT_DIR$/src/core/parser/InputStates.py" line="15">
         <watch expression="self.statement" language="Python" />
       </inline-watch>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/src/core/entities/Problem.py" line="170">
-        <watch expression="generalisations" language="Python" />
-      </inline-watch>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/src/core/entities/Problem.py" line="166">
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/core/entities/Problem.py" line="176">
         <watch expression="self.modeHs." language="Python" />
+      </inline-watch>
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/core/entities/Problem.py" line="180">
+        <watch expression="generalisations" language="Python" />
       </inline-watch>
     </watches-manager>
   </component>
@@ -459,6 +479,6 @@
     <SUITE FILE_PATH="coverage/python_version$main.coverage" NAME="main Coverage Results" MODIFIED="1711062184917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/XHAIL2_0$main.coverage" NAME="Application Coverage Results" MODIFIED="1713968937562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/python_version$dialler.coverage" NAME="dialler Coverage Results" MODIFIED="1711566333571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
-    <SUITE FILE_PATH="coverage/XHAIL2_0$Application.coverage" NAME="Application Coverage Results" MODIFIED="1714272559677" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/XHAIL2_0$Application.coverage" NAME="Application Coverage Results" MODIFIED="1714318578903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

@@ -37,6 +37,16 @@ class Problem(Solvable):
 
 
     def __init__(self, builder):
+        self.background: [str] = []
+        self.config = None
+        self.displays: [Display] = []
+        self.domains: [str]= []
+        self.examples: [Example] = []
+        self.lookup = {}
+        self.modeBs: [ModeB] = []
+        self.modeHs: [ModeH] = []
+        self.refinements = set()
+
         self.refinements = set()
         self.count = 0
         if builder is None:
@@ -112,10 +122,10 @@ class Problem(Solvable):
                 result.add(f"#show {placemarker.get_identifier()}/1.")
         return result
 
-    def get_modeBs(self) -> List[ModeB]:
+    def get_modeBs(self):
         return self.modeBs
 
-    def get_modeHs(self) -> List[ModeH]:
+    def get_modeHs(self):
         return self.modeHs
 
     def get_refinements(self):
