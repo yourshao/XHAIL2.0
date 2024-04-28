@@ -85,12 +85,12 @@ class Dialler:
 
             # Running Clingo with the provided logic program
             try:
-                with open(self.paths['source'], 'r') as source_file:
+                with open(self.paths['source'], 'r', encoding='utf-8') as source_file:
                     source = source_file.read()
 
-                with open(self.paths['errors'], 'w') as error_file, open(self.paths['target'], 'w') as target_file:
+                with open(self.paths['errors'], 'w', encoding='utf-8') as error_file, open(self.paths['target'], 'w') as target_file:
                     result = subprocess.run(
-                        ['clingo', '--verbose=0' ],
+                        ['clingo', '--verbose=0'],
                         # '--opt-bound=builder.value.tostring'
                         input=source,
                         stdout=target_file,
@@ -105,10 +105,10 @@ class Dialler:
                 try:
                     with open(self.paths['target'], 'r') as target_file:
                         # if iter >0:
-                        read = target_file.read()
                         target = Acquirer.from_stream(target_file).parse()
                         target_file.close()
                     return target
+
                 except Exception as e:
                     Logger.error(f"Error during target acquisition: {str(e)}")
             except FileNotFoundError:

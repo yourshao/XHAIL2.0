@@ -279,7 +279,7 @@ class Parser:
 
     def parse_modeB_0(self):
         scheme = self.parse_scheme()
-        negated = "not" == scheme.get_identifier()
+        negated = ("not" == scheme.get_identifier())
 
         if negated:
             scheme = self.parse_scheme()
@@ -298,7 +298,7 @@ class Parser:
 
     def parse_modeH_0(self):
         result = ModeH.Builder(self.parse_scheme())
-        if self.current is not None and self.current == ':':
+        if self.current is not None and self.current == ":":
             self.parse_colon()
             value = self.parse_number().get_value()
             if self.current is not None and self.current == '-':
@@ -320,7 +320,7 @@ class Parser:
         if self.current is None:
             raise ParserErrorException(f"expected '0..9' or '-' but EOF found in '{self.source}'")
         else:
-            negative = self.current == '-'
+            negative = (self.current == '-')
             if negative:
                 self.current = self.iterator.next()
                 self.skip()
@@ -332,8 +332,11 @@ class Parser:
                 # 不同
                 result = int(self.current)
                 self.current = self.iterator.next()
-                return Number.Builder(abs(result)).build()
-
+                while self.current is not None and self.current.isdigit():
+                    result = result * 10 + int(self.current)
+                    self.current = self.iterator.next()
+                result = -result if negative else result
+                return Number.Builder(result).build()
 
         # if self.iterator.has_next():
         #     self.current = self.iterator.next()

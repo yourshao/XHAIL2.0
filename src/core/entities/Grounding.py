@@ -65,7 +65,7 @@ class Grounding(Solvable):
             self.covered.clear()
             self.uncovered.clear()
             for example in self.problem.get_examples():
-                atom = example.get_atom
+                atom = example.get_atom()
                 if example.is_negated() is not (atom in self.facts):
                     self.covered.add(Literal.Builder(atom).set_negated(example.is_negated()).build())
                 else:
@@ -128,7 +128,7 @@ class Grounding(Solvable):
         return result
 
     def as_clauses(self):
-        result = set()
+        result = LinkedHashSet()
         clauses = self.get_generalisation()
         if clauses:
             result.add("{ use_clause_literal(V1,0) }:-clause(V1).")
@@ -160,7 +160,7 @@ class Grounding(Solvable):
                 types_set = {type_ for literal in [head] + list(literals) for type_ in literal.get_types()}
                 types_all = ",".join(types_set)
                 literals_all = ",".join(f"try_clause_literal({clause_id},{literal_id}{','.join(literal.get_variables())})" for literal_id, literal in enumerate(literals, start=1))
-                result.add(f"{head}:-use_clause_literal({clause_id},0){literals_all}{types_all}.")
+                result.add(f"{head}:-use_clause_literal({clause_id},0), {literals_all}{types_all}.")
 
                 for literal_id, literal in enumerate(literals, start=1):
                     variables = ",".join(literal.get_variables())
@@ -220,7 +220,7 @@ class Grounding(Solvable):
 
     def get_generalisation(self):
         if self.generalisation is None:
-            set_of_clauses = set()
+            set_of_clauses = LinkedHashSet()
             for clause in self.get_kernel():
                 substitution_map = {}
                 builder = Clause.Builder()
@@ -341,10 +341,11 @@ class Grounding(Solvable):
         if self.needs_induction():
             dialler = Dialler.Builder(self.config).add_grounding(self).add_values(values).build()
             entry = Answers.time_induction(1, dialler)
-
+            keys = entry.keys()
+            result = Values(keys)
             for var10 in entry.values():
                 for output in var10:
-                    if builder.size() > 0 and self.config.is_terminate:
+                    if builder.size() > 0 and self.config.is_terminate():
                         break
                     hypothesis = Answers.time_deduction(self, output)
                     if self.config.is_debug:

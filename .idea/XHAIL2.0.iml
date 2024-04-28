@@ -5,4 +5,15 @@
     <orderEntry type="jdk" jdkName="potassco" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="PyNamespacePackagesService">
+    <option name="namespacePackageFolders">
+      <list>
+        <option value="$MODULE_DIR$/src/core" />
+        <option value="$MODULE_DIR$/src/core/entities" />
+        <option value="$MODULE_DIR$/src/core/parser" />
+        <option value="$MODULE_DIR$/src/core/statements" />
+        <option value="$MODULE_DIR$/src/core/terms" />
+      </list>
+    </option>
+  </component>
 </module>

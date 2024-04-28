@@ -51,7 +51,7 @@ class Acquirer:
         except ParserErrorException as e:
             Logger.error(e)
         # return self.values, self.answers
-        return {self.values:self.answers}
+        return {self.values : self.answers}
 
 
     def parse_answer(self):

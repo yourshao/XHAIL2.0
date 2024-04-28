@@ -1,4 +1,5 @@
 import sys
+import re
 
 
 class Values:
@@ -6,18 +7,25 @@ class Values:
         if len(args) == 0:
             self.source = "2147483647"
             self.values = [sys.maxsize]
+        elif isinstance(args[0], tuple) or isinstance(args[0], str):
+                values = args[0]
+                # self.source = str(values)
+                # self.values = []
+                # self.values.append(int(item) for item in values)
+                if values is not None and len(values) > 0:
+                    try:
+                        self.source = values
+                        converted = re.split(r'\s+', values)
+                        self.values = [int(val) for val in converted]
+                    except Exception as e:
+                        raise ValueError(f"Illegal 'values' argument in Values(String): {e}")
+                else:
+                    raise ValueError(f"Illegal 'values' argument in Values(String): {values}")
         else:
-            values = args[0]
-            values = values.strip()
-            if values is not None and len(values) > 0:
-                try:
-                    self.source = values
-                    converted = values.split(" ")
-                    self.values = [int(val) for val in converted]
-                except Exception as e:
-                    raise ValueError(f"Illegal 'values' argument in Values(String): {e}")
-            else:
-                raise ValueError(f"Illegal 'values' argument in Values(String): {values}")
+            for values in args:
+                for value in values:
+                    self.source = value.source
+                    self.values = value.values[:]
 
     def __lt__(self, other):
         if not isinstance(other, Values):
@@ -52,6 +60,8 @@ class Values:
         if not values:
             raise ValueError(f"Illegal 'values' argument in Values.matches(String): {values}")
         return self.source == values
+
+
 
     def size(self):
         return len(self.values)

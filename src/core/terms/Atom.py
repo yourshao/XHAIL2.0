@@ -20,6 +20,7 @@ class Atom:
         weight = 1
 
         def __init__(self, atom_or_identifier):
+            self.terms = []
             if isinstance(atom_or_identifier, str):
                 atom_or_identifier = atom_or_identifier.strip()
                 if atom_or_identifier is None or atom_or_identifier.strip() == "" or not ('a' <= atom_or_identifier.strip()[0] <= 'z'):
@@ -31,7 +32,7 @@ class Atom:
                 self.identifier = atom_or_identifier.identifier
                 self.priority = atom_or_identifier.priority
                 self.scheme = atom_or_identifier.scheme
-                self.terms = []
+                # self.terms = []
                 for term in atom_or_identifier.terms:
                     self.terms.append(term)
                 self.weight = atom_or_identifier.weight

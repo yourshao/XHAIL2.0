@@ -1,5 +1,6 @@
 import sys
 from os import stat
+from colorama import Fore, Style, init
 
 from src.core.Config import Config
 from src.core.Dialler import Dialler
@@ -7,18 +8,18 @@ from src.core.entities.Answers import Answers
 
 
 class Logger:
-    ANSI_BLACK = "\033[30m"
-    ANSI_BLUE = "\033[34m"
-    ANSI_CYAN = "\033[36m"
-    ANSI_GREEN = "\033[32m"
-    ANSI_PURPLE = "\033[35m"
-    ANSI_RED = "\033[31m"
-    ANSI_RESET = "\033[0m"
-    ANSI_WHITE = "\033[37m"
-    ANSI_YELLOW = "\033[33m"
+    ANSI_BLACK = Fore.BLACK
+    ANSI_BLUE = Fore.BLUE
+    ANSI_CYAN = Fore.CYAN
+    ANSI_GREEN = Fore.GREEN
+    ANSI_PURPLE = Fore.MAGENTA
+    ANSI_RED = Fore.RED
+    ANSI_RESET = Fore.RESET
+    ANSI_WHITE = Fore.WHITE
+    ANSI_YELLOW = Fore.YELLOW
     memory = set()
-    SIGNATURE = "xhail"
-    VERSION = "0.5.1"
+    SIGNATURE = "XHAIL"
+    VERSION = "2.0.0"
 
     @staticmethod
     def clear():

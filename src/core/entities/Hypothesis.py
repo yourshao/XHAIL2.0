@@ -26,7 +26,7 @@ class Hypothesis:
         def add_atom(self, atom):
             if atom is None:
                 raise ValueError(f"Illegal 'builder' argument in Hypothesis.Builder.add_atom(atom): {atom}")
-            if atom.get_identifier() == "use_clause_literal" and 2 == atom.get_arity():
+            if (atom.get_identifier() == "use_clause_literal") and (2 == atom.get_arity()):
                 self.literals.add(atom)
             else:
                 if self.grounding.get_config().is_full() and self.grounding.has_displays() and self.grounding.look_up(atom):
@@ -42,6 +42,14 @@ class Hypothesis:
             return self
 
         def build(self):
+            self.covered = set()
+            self.uncovered = set()
+            for example in self.grounding.get_examples():
+                atom = example.get_atom()
+                if example.is_negated() != (atom in self.facts):
+                    self.covered.add(Literal.Builder(atom).set_negated(example.is_negated()).build())
+                else:
+                    self.uncovered.add(Literal.Builder(atom).set_negated(example.is_negated()).build())
             return Hypothesis(self)
 
         def clear(self):
