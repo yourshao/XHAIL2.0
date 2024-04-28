@@ -90,7 +90,7 @@ class Dialler:
 
                 with open(self.paths['errors'], 'w', encoding='utf-8') as error_file, open(self.paths['target'], 'w') as target_file:
                     result = subprocess.run(
-                        ['clingo', '--verbose=0'],
+                        ['clingo', '--verbose=0', '--opt-mode=optN'] if self.values is None else ['clingo', '--verbose=0', '--opt-mode=optN', str(self.values)],
                         # '--opt-bound=builder.value.tostring'
                         input=source,
                         stdout=target_file,
@@ -105,6 +105,7 @@ class Dialler:
                 try:
                     with open(self.paths['target'], 'r') as target_file:
                         # if iter >0:
+                        #     read = target_file.read()
                         target = Acquirer.from_stream(target_file).parse()
                         target_file.close()
                     return target

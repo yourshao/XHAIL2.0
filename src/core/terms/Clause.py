@@ -19,6 +19,9 @@ class Clause:
             self.body.add(literal)
             return self
 
+
+
+        # 建立hypotheses 关键部分
         def add_literals(self, literals):
             if literals is None:
                 raise ValueError(f"Illegal 'literals' argument in Clause.Builder.add_literals(literals): {literals}")

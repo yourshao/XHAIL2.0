@@ -219,7 +219,7 @@ class ModeH():
     def as_clauses(self):
         varss = set()  # Using a Python set for variable storage
         atom = str(self.scheme.generalises(varss))  # Assume generalises returns an Atom object
-        types = " :" + " :".join(self.scheme.get_types()) if len(self.scheme.get_types()) > 0 else ""
+        types = " :" + " ,".join(self.scheme.get_types()) if len(self.scheme.get_types()) > 0 else ""
         lists = "," + ",".join(self.scheme.get_types()) if len(self.scheme.get_types()) > 0 else ""
 
         result = [None] * 5

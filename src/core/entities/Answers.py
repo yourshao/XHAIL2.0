@@ -63,20 +63,20 @@ class Answers:
         def put(self, values, answer):
             if values is None or answer is None:
                 raise ValueError(f"Illegal 'values' or 'answer' argument: {values}, {answer}")
-            if self.values is None:
-                order = -1
             else:
-                if self.values == values:
-                    order = 0
+                if Answers.first < 0:
+                    Answers.first = time.time_ns()
+                if self.values is None:
+                    order = -1
                 else:
-                    order = 1 if self.values > values else -1
-            if order < 0:
-                self.answers.clear()
-                self.values = values
-            if order <= 0:
-                self.answers.add(answer)
-            self.count += 1
-            return self
+                    order = values.compare_to(self.values)
+                if order < 0:
+                    self.answers.clear()
+                    self.values = values
+                if order <= 0:
+                    self.answers.add(answer)
+                self.count += 1
+                return self
 
         def remove(self, values, answer):
             if values is None or answer is None:

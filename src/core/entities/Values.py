@@ -70,10 +70,15 @@ class Values:
         return self.source
 
     def compare_to(self, other):
-        for i in range(min(len(self.values), len(other.values))):
-            if self.values[i] < other.values[i]:
-                return -1
-            elif self.values[i] > other.values[i]:
-                return 1
+        result = 0
 
-        return 0
+        if isinstance(other, int):
+            if other == self.values[0]:
+                return 0
+            return 1 if self.values[0] - other > 0 else -1
+        for i in range(min(len(self.values), len(other.values))):
+            if result != 0:
+                break
+            result = self.values[i] - other.values[i]
+
+        return result

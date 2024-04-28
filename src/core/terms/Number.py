@@ -21,6 +21,7 @@ class Number(Term):
     value = None
 
     def __init__(self, builder):
+        self.value = None
         if builder is None:
             raise ValueError(f"Illegal 'builder' argument in Number(builder): {builder}")
         self.value = builder.value
@@ -39,6 +40,7 @@ class Number(Term):
             sets = args[0]
             if sets is None:
                 raise ValueError(f"Illegal 'set' argument in Number.generalises(set): {sets}")
+            return self
 
         elif len(args) == 2:
             term = args[0]

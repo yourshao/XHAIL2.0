@@ -1,10 +1,10 @@
 #display happens/2.
 
 %% B. Background
-#domain time(S;T).
-holdsAt(F,T) :- happens(E,S), S<T, initiates(E,F,S), not clipped(S,F,T).
-clipped(S,F,T) :- happens(E,R), S<R, R<T, terminates(E,F,R).
-holdsAt(F,T) :- initially(F), not clipped(0,F,T).
+
+holdsAt(F,T) :- happens(E,S), S<T, initiates(E,F,S), not clipped(S,F,T), time(T).
+clipped(S,F,T) :- happens(E,R), S<R, R<T, terminates(E,F,R), time(T), time(S).
+holdsAt(F,T) :- initially(F), not clipped(0,F,T), time(T).
 time(0..9).
 sugar(lactose ; glucose).
 event(add(G) ; use(G)) :- sugar(G).
@@ -26,6 +26,6 @@ happens(add(glucose), 0).
 #modeb not holdsAt($fluent,+time).
 
 %% H. Hypothesis
-% happens(use(glucose),T) :- holdsAt(available(glucose),T).
-% happens(use(lactose),T) :- holdsAt(available(lactose),T), not holdsAt(available(glucose),T).
+% happens(use(glucose),T) :- holdsAt(available(glucose),T), time(T).
+% happens(use(lactose),T) :- holdsAt(available(lactose),T), not holdsAt(available(glucose),T), time(T).
 

@@ -156,7 +156,7 @@ class Hypothesis:
             for atom in self.literals:
                 clause_id = int(atom.get_term(0).get_value())
                 literal_id = int(atom.get_term(1).get_value())
-                if literal_id > 0 and 0 <= clause_id < len(generalisation):
+                if literal_id > 0 and 0 <= clause_id and clause_id < len(generalisation):
                     literal = generalisation[clause_id].get_body(literal_id)
                     builders[clause_id].add_literal(literal)
                     literals_set = types[clause_id]

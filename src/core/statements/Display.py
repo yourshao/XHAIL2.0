@@ -52,10 +52,11 @@ class Display:
         result = self.identifier + result
         return f"display_fact({result}):-{result}."
 
+    # 改变了符号，compare to 函数，check001
     def compare_to(self, other):
         result = self.identifier.compare_to(other.identifier)
         if result == 0:
-            result = other.arity - self.arity
+            result = self.arity - other.arity
         return result
 
     def __eq__(self, other):

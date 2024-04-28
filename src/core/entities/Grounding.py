@@ -160,7 +160,11 @@ class Grounding(Solvable):
                 types_set = {type_ for literal in [head] + list(literals) for type_ in literal.get_types()}
                 types_all = ",".join(types_set)
                 literals_all = ",".join(f"try_clause_literal({clause_id},{literal_id}{','.join(literal.get_variables())})" for literal_id, literal in enumerate(literals, start=1))
-                result.add(f"{head}:-use_clause_literal({clause_id},0), {literals_all}{types_all}.")
+                # this is the line that is causing the error, I chang it for no better reason, actually not good
+                if types_all == "" and literals_all == "":
+                    result.add(f"{head}:-use_clause_literal({clause_id},0).")
+                else:
+                    result.add(f"{head}:-use_clause_literal({clause_id},0), {literals_all}{types_all}.")
 
                 for literal_id, literal in enumerate(literals, start=1):
                     variables = ",".join(literal.get_variables())
@@ -226,13 +230,13 @@ class Grounding(Solvable):
                 builder = Clause.Builder()
                 head_atom = clause.get_head()
                 for modeH in self.problem.get_modeHs():
-                    if SchemeTerm.subsumes(modeH.scheme, head_atom, self.facts):
-                        builder.set_head(modeH.scheme.generalises(head_atom, substitution_map))
+                    if SchemeTerm.subsumes(modeH.get_scheme(), head_atom, self.facts):
+                        builder.set_head(modeH.get_scheme().generalises(head_atom, substitution_map))
                 for literal in clause.get_body():
                     body_atom = literal.get_atom()
                     for modeB in self.problem.get_modeBs():
-                        if SchemeTerm.subsumes(modeB.scheme, body_atom, self.facts):
-                            generalized_atom = modeB.scheme.generalises(body_atom, substitution_map)
+                        if SchemeTerm.subsumes(modeB.get_scheme(), body_atom, self.facts):
+                            generalized_atom = modeB.get_scheme().generalises(body_atom, substitution_map)
                             builder.add_literal(Literal.Builder(generalized_atom)
                                                 .set_negated(literal.is_negated())
                                                 .set_level(literal.get_level())
